@@ -152,13 +152,15 @@ $(document).ready(function () {
         e.preventDefault();
     
         // Validación para comprobar si se ha seleccionado una opción de Autobús y Hotel
-        var busSelected = $("input[name='bus']:checked").val();
+        var busIda = $("input[name='bus_ida']:checked").val();
         var hotelSelected = $("input[name='hotel']:checked").val();
+        var busVuelta = $("input[name='bus_vuelta']:checked").val();
     
-        if (!busSelected || !hotelSelected) {
+        if (!busIda || !busVuelta || !hotelSelected) {
             // Mostrar mensaje de advertencia si no se seleccionó Autobús o Hotel
             var message = '';
-            if (!busSelected) message += '<p>Por favor selecciona una opción para el autobús.</p>';
+            if (!busIda) message += '<p>Por favor selecciona una opción para el bus de ida.</p>';
+            if (!busVuelta) message += '<p>Por favor selecciona una opción para el bus de vuelta.</p>';
             if (!hotelSelected) message += '<p>Por favor selecciona una opción para el hotel.</p>';
             
             $('#alert-wrapper').html(alert_markup('danger', message));

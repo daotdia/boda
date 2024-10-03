@@ -293,10 +293,11 @@ Hero
 }
 .fixed {
   position: fixed;
-  background-color: rgba(55, 36, 40, .88);
+  background-color: rgba(232, 202, 111, 0.5); /* 50% de transparencia */
   z-index: 999;
   width: 100%;
 }
+
 header {
   padding: 50px 0;
   border-bottom: solid 1px rgba(255, 255, 255, 0.2);
@@ -924,7 +925,7 @@ body.modal-open {
   font-weight: bold; /* Negrita */
   margin-bottom: 0;
   margin-right: 10px; /* Espacio entre el título y los botones */
-  font-size: 16px;
+  font-size: 14px;
   color: #333; /* Color del título */
   display: flex;
   align-items: center; /* Centrar verticalmente */
