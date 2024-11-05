@@ -1,6 +1,6 @@
-// Inicialización del mapa y el marcador como variables globales
-var iglesiaLocation = { lat: 40.4157922, lng: -3.6657747 }; // Coordenadas de la iglesia
-var torreGallenLocation = { lat: 39.9043715, lng: -0.0723171 }; // Coordenadas de Torre Gallén
+var iglesiaLocation = { lat: 39.9911171, lng: -0.0309581 }; // Coordenadas de la Iglesia en Castellón
+var torreGallenLocation = { lat: 39.9043674, lng: -0.0697422 }; // Coordenadas de Torre Gallén
+
 var map;    // Mapa global
 var marker; // Marcador global
 
@@ -185,15 +185,24 @@ $(document).ready(function () {
             });
     });
 
-    /********************** Manejo de los botones del mapa **********************/
     $('#btn-show-map-iglesia').on('click', function() {
+        // Centrar el mapa en la ubicación de la iglesia (opcional)
         map.setCenter(iglesiaLocation);
         marker.setPosition(iglesiaLocation);
+
+        // Abrir Google Maps en la URL específica de la iglesia
+        var googleMapsURL = 'https://www.google.com/maps/place/Colegio+Consolaci%C3%B3n+Castell%C3%B3n/@39.990891,-0.0310331,18.96z/data=!4m12!1m5!3m4!2zNDDCsDI0JzU2LjkiTiAzwrAzOSc1Ni44Ilc!8m2!3d40.4157922!4d-3.6657747!3m5!1s0xd5fffd1da0ee803:0x1f367582142251aa!8m2!3d39.9911171!4d-0.0309581!16s%2Fg%2F1tc_5fdd?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D';
+        window.open(googleMapsURL, '_blank');
     });
 
     $('#btn-show-map-torregallen').on('click', function() {
+        // Centrar el mapa en la ubicación de Torre Gallén (opcional)
         map.setCenter(torreGallenLocation);
         marker.setPosition(torreGallenLocation);
+
+        // Abrir Google Maps en la URL específica de Torre Gallén
+        var googleMapsURL = 'https://www.google.com/maps/place/TORRE+GALL%C3%89N/@39.9048694,-0.0711262,16z/data=!4m12!1m5!3m4!2zMznCsDU0JzE1LjciTiAwwrAwNCcyMC4zIlc!8m2!3d39.9043715!4d-0.0723171!3m5!1s0xd6001503fb513a1:0x58080603539191ac!8m2!3d39.9043674!4d-0.0697422!16s%2Fg%2F11clyctz40?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D';
+        window.open(googleMapsURL, '_blank');
     });
 
     // Inicializar el mapa
