@@ -122,7 +122,22 @@ $(document).ready(function () {
     }
 
     /********************** Embed youtube video *********************/
-    $('.player').YTPlayer();
+    $('.player').YTPlayer({
+        videoURL: 'https://www.youtube.com/watch?v=ahImG_S5WyY',
+        containment: '#video-bg',
+        autoPlay: true,
+        mute: true, // Asegura que el video esté silenciado
+        showControls: false,
+        startAt: 0,
+        stopAt: 10000,
+        opacity: 1
+    });
+
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+        $('body').one('touchstart', function () {
+            $('.player').YTPPlay();
+        });
+    }
 
     /********************** Toggle Map Content **********************/
     $('#btn-show-map').click(function () {
