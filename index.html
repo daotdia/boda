@@ -222,14 +222,17 @@
 </section>
 
 <section id="video-bg">
-    <div id="bgndVideo" class="player"
-         data-property="{videoURL:'https://www.youtube.com/watch?v=ahImG_S5WyY', containment:'#video-bg', autoPlay:1, mute:1, showControls:false, startAt:0, stopAt:10000, opacity:1}">
-    </div>
+    <video id="bgndVideo" autoplay muted loop playsinline>
+        <source src="./resources/video.mp4" type="video/mp4">
+        <!-- Agrega otros formatos como WebM si es necesario -->
+    </video>
     <div id="video-content">
         <h5>Castellón de la Plana</h5>
         <p>La terreta</p>
     </div>
 </section>
+
+
 
 <section id="map" class="section-padding">
     <div class="text-center">
