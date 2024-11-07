@@ -50,6 +50,32 @@
         }
     </script>
 
+<script>
+    function copyIBAN(event) {
+    const ibanText = document.getElementById("iban-number").textContent.replace(/\s+/g, ''); // Eliminar espacios
+    const button = event.currentTarget;
+    const defaultIcon = button.querySelector(".icon-default");
+    const successIcon = button.querySelector(".icon-success");
+
+    navigator.clipboard.writeText(ibanText).then(function() {
+        // Cambia al icono de "OK"
+        defaultIcon.style.display = "none";
+        successIcon.style.display = "inline";
+
+        // Vuelve al icono de portapapeles después de 5 segundos
+        setTimeout(() => {
+            successIcon.style.display = "none";
+            defaultIcon.style.display = "inline";
+        }, 450);
+    }).catch(function(error) {
+        console.error("Error al copiar el IBAN: ", error);
+    });
+}
+
+</script>
+
+
+
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/jquery.fancybox.css">
@@ -207,6 +233,30 @@
     </div><!-- /.modal -->
  
 </section>
+
+<section id="lista-de-bodas" class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="header">Lista de Bodas</h3>
+                <p class="text-center">Si deseas contribuir con un regalo, os dejamos nuestro número de cuenta</p>
+                <div class="iban-wrapper">
+                    <div class="iban-box">
+                        <span id="iban-number">ES38 1544 7889 7966 5010 8043</span>
+                        <button class="copy-btn" onclick="copyIBAN(event)">
+                            <i class="fa fa-clipboard icon-default"></i>
+                            <i class="fa fa-check icon-success" style="display: none;"></i>
+                        </button>
+                    </div>
+                </div>                
+                <p class="text-center">Aunque el principal regalo es tenerte con nosotros</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
 
 <section id="instagram" class="section-padding">
     <div class="container">

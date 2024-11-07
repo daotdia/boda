@@ -1022,5 +1022,105 @@ body.modal-open {
   transform: translate(-50%, -50%);
 }
 
+.subtitle-text {
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;
+  color: #333;
+  margin: 10px 0;
+}
+
+.iban-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.iban-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px 15px;
+  width: 100%;
+  max-width: 400px;
+  font-family: "Open Sans", sans-serif;
+  color: #333;
+  font-weight: bold;
+}
+
+.iban-box #iban-number {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.copy-btn {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  font-size: 18px;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+}
+
+.icon-success {
+  color: rgba(0, 128, 0, 0.3); /* Verde con un 70% de opacidad */
+  display: none;
+}
+
+
+.icon-default {
+  color: #333;
+  display: inline;
+}
+
+
+.copy-btn:hover {
+  color: #555;
+}
+
+.copy-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 5px;
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: "Open Sans", sans-serif;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  pointer-events: none;
+}
+
+.copy-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+
+#instagram, #map {
+  background-color: #f8f9fd;
+}
+
+
+
+
 
 
