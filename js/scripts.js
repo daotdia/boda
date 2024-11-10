@@ -166,12 +166,12 @@ $(document).ready(function () {
     $('#rsvp-form').on('submit', function (e) {
         e.preventDefault();
     
-        // Validación para comprobar si se ha seleccionado una opción de Autobús y Hotel
+        // Validación para comprobar si se ha seleccionado una opción de Autobús
         var busIda = $("input[name='bus_ida']:checked").val();
         var busVuelta = $("input[name='bus_vuelta']:checked").val();
     
         if (!busIda || !busVuelta) {
-            // Mostrar mensaje de advertencia si no se seleccionó Autobús o Hotel
+            // Mostrar mensaje de advertencia si no se seleccionó Autobús
             var message = '';
             if (!busIda) message += '<p>Por favor selecciona una opción para el bus de ida.</p>';
             if (!busVuelta) message += '<p>Por favor selecciona una opción para el bus de vuelta.</p>';
